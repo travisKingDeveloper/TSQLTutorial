@@ -1,0 +1,11 @@
+USE Movies
+GO
+
+CREATE TRIGGER trgNoNewTables
+ON DATABASE
+FOR CREATE_TABLE
+AS
+BEGIN
+	PRINT 'No new tables please'
+	ROLLBACK
+END
